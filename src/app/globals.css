@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc; /* Light Gray/Off-White for background */
+  --foreground: #1e293b; /* Dark Slate Blue for text */
+  --primary: #4f46e5; /* Indigo for primary actions */
+  --primary-hover: #4338ca;
+  --secondary: #64748b; /* Slate Gray for secondary text */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  min-height: 100vh;
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150;
+  }
+
+  .btn-primary {
+    @apply bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition duration-150;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition duration-150;
+  }
+}
+
+/* Ensure the root layout takes full height */
+#__next {
+  height: 100%;
+}
