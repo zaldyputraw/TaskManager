@@ -15,7 +15,7 @@ export class UpdateTaskUseCase {
     userId: number,
     input: {
       title?: string;
-      description?: string;
+      description?: string | null;
       status?: TaskStatus;
     }
   ): Promise<Task> {

@@ -18,7 +18,7 @@ const deleteTaskUseCase = new DeleteTaskUseCase(taskRepository);
 // GET /api/tasks/[id] - Get a specific task
 export async function GET(
   request: NextRequest,
-  { params }
+  { params }: { params: { id: string } }
 ) {
   try {
     const userId = request.headers.get('x-user-id');
@@ -49,7 +49,7 @@ export async function GET(
 // PUT /api/tasks/[id] - Update a task
 export async function PUT(
   request: NextRequest,
-  { params }
+  { params }: { params: { id: string } }
 ) {
   try {
     const userId = request.headers.get('x-user-id');
@@ -86,7 +86,7 @@ export async function PUT(
 // DELETE /api/tasks/[id] - Delete a task
 export async function DELETE(
   request: NextRequest,
-  { params }
+  { params }: { params: { id: string } }
 ) {
   try {
     const userId = request.headers.get('x-user-id');
