@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
 }
 
-@layer components {
+/* @layer components {
   .card {
     @apply bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl;
   }
@@ -33,7 +33,7 @@ body {
   .btn-secondary {
     @apply bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition duration-150;
   }
-}
+} */
 
 /* Ensure the root layout takes full height */
 #__next {

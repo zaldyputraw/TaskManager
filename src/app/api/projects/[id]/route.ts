@@ -15,7 +15,7 @@ const deleteProjectUseCase = new DeleteProjectUseCase(projectRepository);
 // GET /api/projects/[id] - Get a specific project
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }
 ) {
   try {
     const userId = request.headers.get('x-user-id');
@@ -45,7 +45,7 @@ export async function GET(
 // PUT /api/projects/[id] - Update a project
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }
 ) {
   try {
     const userId = request.headers.get('x-user-id');
@@ -77,7 +77,7 @@ export async function PUT(
 // DELETE /api/projects/[id] - Delete a project
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }
 ) {
   try {
     const userId = request.headers.get('x-user-id');

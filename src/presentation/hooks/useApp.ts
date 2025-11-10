@@ -12,14 +12,14 @@ export const useApp = () => {
   };
 
   // Simple client-side user state management (for demonstration)
-  const [user, setUser] = useState<{ name: string } | null>(null);
+  const [user, setUser] = useState<{ name: string; userId: number } | null>(null);
 
   useEffect(() => {
     // In a real app, this would fetch user data from a session or context
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       try {
-        setUser(JSON.parse(storedUser));
+        setUser(JSON.parse(storedUser) as { name: string; userId: number });
       } catch (e) {
         console.error('Failed to parse user data from localStorage', e);
       }

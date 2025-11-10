@@ -55,7 +55,7 @@ export default function DashboardPage() {
       if (!userId) return;
 
       const response = await fetch('/api/tasks', {
-        headers: { 'x-user-id': userId },
+        headers: { 'x-user-id': String(userId) },
       });
 
       if (response.ok) {
@@ -87,7 +87,7 @@ export default function DashboardPage() {
         method,
         headers: {
           'Content-Type': 'application/json',
-          'x-user-id': userId,
+          'x-user-id': String(userId),
         },
         body: JSON.stringify(data),
       });
@@ -109,7 +109,7 @@ export default function DashboardPage() {
 
       await fetch(`/api/tasks/${id}`, {
         method: 'DELETE',
-        headers: { 'x-user-id': userId },
+        headers: { 'x-user-id': String(userId) },
       });
       fetchTasks();
     } catch (error) {

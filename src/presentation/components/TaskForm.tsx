@@ -11,6 +11,7 @@ interface TaskFormProps {
 }
 
 export default function TaskForm({ onSubmit, initialData, loading = false, onCancel }: TaskFormProps) {
+  const { t } = useApp();
   const [title, setTitle] = useState(initialData?.title || '');
   const [description, setDescription] = useState(initialData?.description || '');
   const [status, setStatus] = useState(initialData?.status || 'todo');
