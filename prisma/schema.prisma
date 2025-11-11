@@ -7,27 +7,27 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
 model User {
-  id        Int     @id @default(autoincrement())
-  email     String  @unique
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
   password  String
   name      String?
-  role      String  @default("user")
+  role      String   @default("user")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  tasks     Task[]
-  projects  Project[]
+  tasks         Task[]
+  projects      Project[]
   notifications Notification[]
 
   @@map("users")
 }
 
 model Project {
-  id          Int     @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   userId      Int
   name        String
   description String?
@@ -41,12 +41,12 @@ model Project {
 }
 
 model Task {
-  id          Int     @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   userId      Int
   projectId   Int?
   title       String
   description String?
-  status      String  @default("todo") // todo, in_progress, done
+  status      String   @default("todo") // todo, in_progress, done
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
